@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>Tennis courts as public infrastructure</title>
+  <style>
+    html, body {
+      margin: 0;
+      font-family: sans-serif;
+      height: 100%;
+      background: #f0f0f0;
+    }
+
+    .container {
+      display: flex;
+      height: 100vh;
+  
+      margin: 0 auto;
+    }
+
+    .container-2 {
+margin-top: 2rem;
+margin-bottom: 2rem;
+      margin: 0 auto;
+  width: 80%;
+  height: 100vh;            /* Full viewport height */
+  position: relative;
+  overflow: hidden;
+    }
+
+
+    #graphic {
+      position: sticky;
+      top: 0;
+      width: 50%;
+      height: 100vh;
+      background: #f0f0f0;
+    }
+
+    svg {
+      width: 100%;
+      height: 80%;
+    }
+
+    #scrolly {
+      width: 50%;
+      height: 100vh;
+      overflow-y: scroll;
+      padding: 2rem;
+      box-sizing: border-box;
+    }
+
+    .step {
+      margin-bottom: 80vh;
+      padding: 1rem;
+      border-left: 4px solid transparent;
+      border: 1px solid #ccc;
+      background: #f9f9f9;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); 
+      font-family: 'Source Serif 4', serif;
+      font-size: 1.15rem;
+    line-height: 1.8;
+    color: #222;
+    max-width: 550px;
+    }
+
+    .story-header {
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+}
+
+.story-title {
+  font-family: 'Source Serif 4', serif;
+  font-size: 2.75rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: #222;
+  margin-bottom: 0.5rem;
+}
+
+.story-subtitle {
+  font-family: 'Source Serif 4', serif;
+  font-size: 1.25rem;
+  color: #666;
+  margin-top: 0;
+}
+
+
+    .step.is-active {
+      background: #f9f9f9;
+    }
+
+  #map-container {
+     
+
+  width: 100vh;
+  height: 80vh;    
+  position: relative;
+  overflow: hidden;
+display: none;
+margin-bottom: 2rem;
+
+}
+
+#fixed-text-box {
+  overflow: hidden;
+  padding: 0 1rem;
+  padding-left: 20;
+  width: 85%;
+  position: relative;
+  border-left: 4px solid transparent;
+      border: 1px solid #ccc;
+      background: #f9f9f9;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); 
+      font-family: 'Source Serif 4', serif;
+      font-size: 1.15rem;
+    line-height: 1.8;
+    color: #222;
+
+}
+   
+iframe {
+
+  width: 100%;   /* Ensure the iframe takes up the full width */
+  height: 90vh; /* Ensure it takes up the full viewport height */
+  border: none; 
+  margin: 0 auto;   /* Remove border if there is one */
+}
+
+#conclusion {padding-bottom: 20px;}
+
+#conclusion blockquote {
+  
+  margin: 20px auto;
+  padding-left: 20px;
+  border-left: 3px solid #22aa67;
+  font-family: 'Source Serif 4', serif;
+  font-size: 16px;
+  color: #555;
+  max-width: 400px;
+  padding-bottom: 20px;
+
+}
+
+
+  </style>
+</head>
+<body>
+  <header class="story-header">
+    <h1 class="story-title">Tennis courts as public infrastructure</h1>
+    <p class="story-subtitle">Dea Bardhoshi</p>
+  </header>
+  
+
+<div class="container">
+  
+  <div id="graphic">
+    <svg></svg>
+  </div>
+  <div id="scrolly">
+    <div class="step" data-step="0"> When is the best time to schedule a tennis game? While a lot of cities have online reservation systems for their public courts, data about usage patterns is very hard to find. As someone who loves playing tennis but often has to compete with others for limited court space, having that data would have really useful. So far, the only complete dataset I've found with reservation information comes from Mesa, Arizona. These are all bookings in the data across 8 years: 2015-2023: </div>
+    <div class="step" data-step="1"> These are the numbers of bookings for each month. Note the big summer dip! June and July are the hottest months in Mesa, where temperatures reach 100-105 degrees regularly. The coldest momths are December-January, where temperatures are in the mid 60s, perfect for tennis.</div>
+    <div class="step" data-step="2"> The most popular playing hours are early morning times (perhaps pre-work games?) and then the evening (5pm onwards). This perhaps suggests that most people fit their playing schedules around work routines. </div>
+    <div class="step" data-step="3"> In the weekends, the tennis facilities in the dataset are only open until noon. Here are some results: most common reservation times are early-ish morning. Unsurprisingly nobody is playing at 6am on a weekend. </div>
+    <div class="step" data-step="4"> This dataset was interesting, however it was also pretty limited. There are only 8 facilities in the data, so to zoom out a bit, I took a look at this other dataset of all courts across the United States. There are 29k of them! These are the 10 cities with the most courts: </div>
+    <div class="step" data-step="5"> While 29k courts might seem like a lot, public courts are only a fraction of them. Each court in the data is either public or 'HOA' (homeowners association). The latter means the court is owned or managed by a homeowners local group. People in HOAs can regulate access to these courts, as opposed to public ones that are available to all. Almost half of all courts in the data are classified as 'homeowner community' and the rest as public. Note that the top 10 list for public courts is a bit different: Atlanta and Miami disappear from the list. In fact, only 19% of courts in Atlanta and 26% in Miami are classified as 'public'.</div>
+    <div class="step" data-step="6"> The disparities between public vs HOA courts got me thinking about bigger trends. What if there are disparities in income levels and the availability of tennis courts? This chart plots average city-wide incomes against the number of courts and there is a positive pattern: richer cities seem to have more courts. Interestingly, San Francisco, which is the richest area of the US, has a relatively low court count. Other top 10 cities, on the other hand, tend to be richer. </div>
+    
+    
+  </div>
+
+  </div>
+
+
+  
+  <div class="container-2">
+    <div id="fixed-text-box">
+      <p>However, even within the same city, tennis courts are more common in certain neighborhoods. Are higher income neighborhoods also more likely to have a higher number of courts? Here's a map showing income and number of courts plotted as a bivariate map for all zipcodes in the dataset. This view shows a much more nuanced story: in different cities, there are many high-income, high-tennis court density places. <br> <br> But there are also areas, although fewer of them, that have lower incomes but also many tennis courts. As places for recreation and a healthy lifestyle, having these courts ideally helps neighborhoods lead healthier lives. Where are gaps in available courts? Those would be places with low income - low number of courts: places like South LA or Harlem and the Bronx in New York. <br><br> These patterns show different levels of investment across neighborhoods, and understanding these disparities makes building access to infrastructure like tennis courts more equitable across zipcodes.  </p>
+    </div>
+  <div id = "plotly-map-container"></div>
+   
+    <iframe src="plotly_map.html"></iframe>
+  </div>
+</div>
+
+<section id="conclusion">
+ 
+  <blockquote>
+   This started as an attempt to find the best time for booking a court, but now I have more context about tennis courts as public infrastructure all over the United States. Thanks for reading!
+  </blockquote>
+</section>
+
+</div>
+
+
+
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://unpkg.com/scrollama"></script>
+<script>
+ 
+ const svg = d3.select("svg");
+const margin = {top: 20, right: 10, bottom: 50, left: 90};
+const width = svg.node().clientWidth - margin.left - margin.right;
+const height = svg.node().clientHeight - margin.top - margin.bottom;
+
+const chart = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
+const x = d3.scaleTime().range([0, width]);
+const y = d3.scaleLinear().range([height, 0]);
+const xAxis = chart.append("g").attr("transform", `translate(0,${height})`);
+const yAxis = chart.append("g");
+const yBand = d3.scaleBand().range([0, width]).padding(0.1);
+
+const line = d3.line().x(d => x(d.date)).y(d => y(d.count));
+
+const path = chart.append("path")
+  .attr("fill", "none")
+  .attr("stroke", "#22aa67")
+  .attr("stroke-width", 3);
+
+  Promise.all([
+  d3.csv("tenniscourts.csv", d => ({
+    date: new Date(d['Booking Date']),
+    hour: +d['Booking Time'].split(":")[0],
+    dayofweek: +d['Booking Day Type'],
+    facility: +d['Facility ID']
+  })),
+  d3.csv("tennis_courts_with_incomes.csv", d => ({
+    city: d['address'],
+    courts: 1,
+    type : d['zip_code'],
+    income: d['avg_income'],
+
+  }))
+]).then(([bookings, courts]) => {
+
+  // Dataset 1: bookings by month
+  const bookingsByMonth = d3.rollups(
+    bookings,
+    v => v.length,
+    d => d3.timeMonth(d.date)
+  ).map(([date, count]) => ({ date: new Date(date), count }))
+    .sort((a, b) => a.date - b.date);
+
+  // Dataset 2: summer months
+  const summer = d3.rollups(
+    bookings,
+    v => v.length,
+    d => d.date.getMonth()
+  ).map(([month, count]) => ({
+    date: new Date(2000, month, 1),
+    count
+  })).sort((a, b) => a.date - b.date);
+
+  // Dataset 3: hourly bookings
+  const hourly = d3.rollups(
+    bookings,
+    v => v.length,
+    d => d.hour
+  ).map(([hour, count]) => ({
+    date: new Date(2000, 0, 1, hour),
+    count
+  })).sort((a, b) => a.date - b.date);
+
+  // Dataset 4: weekday vs weekend
+  bookings.forEach(d => {
+  const day = d.date.getDay();
+
+  
+}
+
+);
+
+
+const weekendData = bookings.filter(d => {
+  const day = d.date.getDay();
+  return day === 0 || day === 6; // Sunday (0) or Saturday (6)
+}); 
+
+const weekendHourly = d3.rollups(
+  weekendData,
+  v => v.length,
+  d => d.hour
+).map(([hour, count]) => ({
+  date: new Date(2000, 0, 2, hour), // Dummy date for x-scale
+  count
+}));
+
+weekendHourly.sort((a, b) => a.date - b.date);
+
+  // Aggregate by city
+  const courtsByCity = d3.rollups(
+    courts,
+    v => d3.sum(v, d => d.courts), // Sum the number of courts per city
+    d => d.city
+  ).map(([city, courts]) => ({ city, courts, date: new Date(2000, 0, 4) }));
+
+  const top10Cities = courtsByCity
+  .sort((a, b) => d3.descending(a.courts, b.courts))
+  .slice(0, 10);
+
+  const courtsByCityAndType = d3.rollups(
+    courts,
+    v => ({
+      public: d3.sum(v, d => d.type === 'Public' ? 1 : 0),
+      hoa: d3.sum(v, d => d.type === 'Homeowners Community' ? 1 : 0)
+    }),
+    d => d.city
+  ).map(([city, counts]) => ({
+    city, 
+    public: counts.public, 
+    hoa: counts.hoa, 
+    total: counts.public + counts.hoa,
+    date: new Date(2000, 0, 5)
+  }));
+
+  // Log or inspect the aggregated data
+  const top10Cities_type = courtsByCityAndType
+    .sort((a, b) => d3.descending(a.public, b.public))
+    .slice(0, 10);
+
+
+    const courtsByCityIncome = d3.rollups(
+  courts,
+  v => ({
+    count: v.length,
+    avgIncome: d3.mean(v, d => +d.income)
+  }),
+  d => d.city
+).map(([city, vals]) => ({
+  city,
+  courts: vals.count,
+  income: vals.avgIncome,
+  date: new Date(2000, 0, 7) // Dummy date to distinguish this dataset
+}) 
+
+);
+  
+
+const datasets = [bookingsByMonth, summer, hourly, weekendHourly, top10Cities, 
+top10Cities_type, courtsByCityIncome];
+  
+  
+
+function update(data) {
+    const isWeekdayWeekend = data[0].date.getDate() === 2
+    const isMonthly = data.length > 12 && data[0].date instanceof Date && data[0].date.getFullYear() !== 2000;
+    const isSeason = data.length === 12 && data[0].date.getDate() === 1;
+    const isHour = data[0].date.getDate() === 1 && data[0].date.getMonth() === 0 && data[0].date.getFullYear() === 2000 && data.length > 3;
+    const isBarChart = data[0].date.getDate() === 4
+    const isPublic = data[0].date.getDate() === 5
+    const isScatter = data[0].date.getDate() === 7
+
+
+
+    // Clear previous lines if needed
+    chart.selectAll(".line-group").remove();
+    chart.selectAll(".legend").remove();
+
+
+      // Single-line case
+      x.domain(d3.extent(data, d => d.date));
+      y.domain([0, d3.max(data, d => d.count)]);
+
+      xAxis.transition().call(
+        d3.axisBottom(x)
+          .ticks(isMonthly ? d3.timeYear.every(1) : data.length)
+          .tickFormat(d => {
+            if (isSeason) return d3.timeFormat("%b")(d);
+            if (isHour) return d3.timeFormat("%H:%M")(d);
+            if (isWeekdayWeekend) return d3.timeFormat("%H:%M")(d);
+            if (isBarChart) return d.city;
+            return d3.timeFormat("%Y")(d);
+          })
+      )
+        .selectAll("text")
+        .style("font-size", "12px")
+        .style("font-family", "'Helvetica Neue', Helvetica, Arial, sans-serif")
+        .style("fill", "#555")
+        .style("text-anchor", "middle");
+
+      yAxis.transition().call(d3.axisLeft(y).ticks(5))
+        .selectAll("text")
+        .style("font-size", "12px")
+        .style("font-family", "'Helvetica Neue', Helvetica, Arial, sans-serif")
+        .style("fill", "#555");
+
+      path.datum(data)
+        .transition()
+        .duration(750)
+        .attr("d", line);
+
+        if (!isBarChart) {
+
+      const dots = chart.selectAll(".dot")
+        .data(data);
+
+      dots.enter()
+        .append("circle")
+        .attr("class", "dot")
+        .attr("cx", d => x(d.date))
+        .attr("cy", d => y(d.count))
+        .attr("r", 4)
+        .attr("fill", "#22aa67");
+
+      dots.transition()
+        .duration(750)
+        .attr("cx", d => x(d.date))
+        .attr("cy", d => y(d.count));
+
+      dots.exit().remove()};
+
+      chart.selectAll(".bar").remove();
+path.attr("display", isBarChart ? "none" : null); 
+
+
+// Draw bars if needed
+if (isBarChart) {
+  chart.selectAll(".dot").remove();
+  chart.selectAll(".label").remove();
+
+// Correct: yBand = cities (categorical), x = courts (numerical)
+yBand.domain(data.map(d => d.city));
+const x = d3.scaleLinear().range([0, width]);
+
+x.domain([0, d3.max(data, d => d.courts)]);
+
+
+const abbreviations = {
+  'new york': 'NYC',
+  'atlanta': 'Atlanta',
+  'boston': 'Boston',
+  'los angeles': 'LA',
+  'chicago': 'Chicago',
+  "miami-fort lauderdale": "Miami",
+  "san francisco - oakland - san jose": "SF",
+  "houston - galveston - brazoria": "Houston",
+  'dallas - fort worth':'Dallas',
+  "minneapolis-st. paul":"Minneapolis",
+  'west palm beach - boca raton':'Palm Beach'
+};
+
+
+// Y-axis = categorical cities on the left
+yAxis.transition().call(d3.axisLeft(yBand))
+  .selectAll("text")
+  .text(d => abbreviations[d] || d)
+  .style("font-size", "12px")
+  .style("font-family", "'Helvetica Neue', Helvetica, Arial, sans-serif");
+
+ // .attr("transform", `translate(0, ${height - margin.bottom} / 2 )`);  // Place x-axis at the bottom
+xAxis.transition().call(d3.axisBottom(x).ticks(5));
+
+// Bind data and draw bars
+chart.selectAll(".bar")
+  .data(data)
+  .join("rect")
+  .attr("class", "bar")
+  .attr("y", d => yBand(d.city))
+  .attr("x", x(0)) // start from zero
+  .attr("height", yBand.bandwidth())
+  .attr("width", d => x(d.courts)) // bar grows to the right
+  .attr("fill", "#669966");
+
+}  
+
+if (isPublic) {
+  chart.selectAll(".dot").remove();
+  chart.selectAll(".label").remove();
+
+// Correct: yBand = cities (categorical), x = courts (numerical)
+yBand.domain(data.map(d => d.city));
+const x = d3.scaleLinear().range([0, width]);
+
+x.domain([0, d3.max(data, d => d.public)]);
+
+
+const abbreviations = {
+  'new york': 'NYC',
+  'atlanta': 'Atlanta',
+  'boston': 'Boston',
+  'los angeles': 'LA',
+  'chicago': 'Chicago',
+  "miami-fort lauderdale": "Miami",
+  "san francisco - oakland - san jose": "SF",
+  "houston - galveston - brazoria": "Houston",
+  'dallas - fort worth':'Dallas',
+  "minneapolis-st. paul":"Minneapolis",
+  'west palm beach - boca raton':'Palm Beach',
+  'philadelphia': 'Philadelphia',
+  'detroit': 'Detroit',
+  'washington': 'Washington'
+};
+
+
+// Y-axis = categorical cities on the left
+yAxis.transition().call(d3.axisLeft(yBand))
+  .selectAll("text")
+  .text(d => abbreviations[d] || d)
+  .style("font-size", "12px")
+  .style("font-family", "'Helvetica Neue', Helvetica, Arial, sans-serif");
+
+ // .attr("transform", `translate(0, ${height - margin.bottom} / 2 )`);  // Place x-axis at the bottom
+xAxis.transition().call(d3.axisBottom(x).ticks(5));
+
+// Bind data and draw bars
+chart.selectAll(".bar")
+  .data(data)
+  .join("rect")
+  .attr("class", "bar")
+  .attr("y", d => yBand(d.city))
+  .attr("x", x(0)) // start from zero
+  .attr("height", yBand.bandwidth())
+  .attr("width", d => x(d.public)) // bar grows to the right
+  .attr("fill", "#77bb78");
+
+} if (isScatter) {
+
+  chart.selectAll(".bar").remove();
+  chart.selectAll(".dot").remove();
+  path.attr("display", "none");
+
+  const x = d3.scaleLinear().range([0, width]);
+  const y = d3.scaleLinear().range([height, 0]);
+
+  x.domain([60000, d3.max(data, d => d.income)]);
+  y.domain([0, d3.max(data, d => d.courts)]);
+
+  xAxis.transition().call(d3.axisBottom(x).ticks(5));
+  yAxis.transition().call(d3.axisLeft(y).ticks(5));
+
+  chart.selectAll(".dot")
+    .data(data)
+    .join("circle")
+    .attr("class", "dot")
+    .attr("cx", d => x(d.income))
+    .attr("cy", d => y(d.courts))
+    .attr("r", 5)
+    .attr("fill", "#3366cc");
+
+    const abbreviations = {
+  'new york': 'NYC',
+  'atlanta': 'Atlanta',
+  'boston': 'Boston',
+  'los angeles': 'Los Angeles',
+  'chicago': 'Chicago',
+  "miami-fort lauderdale": "Miami",
+  "san francisco - oakland - san jose": "SF",
+  "houston - galveston - brazoria": "Houston",
+  'dallas - fort worth':'Dallas',
+  "minneapolis-st. paul":"Minneapolis",
+  'philadelphia': 'Philadelphia',
+  'detroit': 'Detroit',
+}
+
+
+  // Optional: add city labels
+  chart.selectAll(".label")
+  .data(data.filter(d => abbreviations[d.city.toLowerCase()]))  // filter to only those in abbreviations
+  .join("text")
+  .attr("class", "label")
+  .attr("x", d => x(d.income))
+  .attr("y", d => y(d.courts))
+  .attr("dx", -15)
+  .attr("dy", -6)
+  .text(d => abbreviations[d.city.toLowerCase()])
+  .style("font-size", "11px")
+  .style("font-family", "'Helvetica Neue', Helvetica, Arial, sans-serif")
+  .style("fill", "#333");
+
+}
+  
+  }
+  
+
+  update(datasets[0]);
+
+  scrollama()
+    .setup({
+      step: ".step",
+      offset: 0.5,
+      debug: false
+    })
+    .onStepEnter(response => {
+      d3.selectAll('.step').classed('is-active', (d, i) => i === response.index);
+      update(datasets[response.index]);
+    });
+});
+
+  
+  
+</script>
+
+</body>
+</html>
