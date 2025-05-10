@@ -221,7 +221,7 @@ const path = chart.append("path")
   .attr("stroke-width", 3);
 
   Promise.all([
-  d3.csv("tenniscourts.csv", d => ({
+  d3.csv("tennissample.csv", d => ({
     date: new Date(d['Booking Date']),
     hour: +d['Booking Time'].split(":")[0],
     dayofweek: +d['Booking Day Type'],
